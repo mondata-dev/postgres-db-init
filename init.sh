@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # uses the environment variable PGPASSWORD to authenticate against postgresql
 export PGUSERPASSWORD=${PGPASSWORD}

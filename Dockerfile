@@ -1,10 +1,9 @@
-FROM phusion/baseimage:18.04-1.0.0
+FROM alpine:3.12.1
 
-RUN apt update && apt install -y postgresql-client dnsutils
+RUN apk add postgresql-client
 
-COPY init.sh ./init.sh
+COPY init.sh /init.sh
 
-RUN chmod +x ./init.sh
+RUN chmod +x /init.sh
 
-CMD ["/sbin/my_init"]
-
+ENTRYPOINT ["/init.sh"]
