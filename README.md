@@ -28,7 +28,7 @@ Simple docker container that can be used to initialize a postgresql database for
         - name: PGUSER
           value: newuser
         - name: PGPASSWORD
-		  value: newsecret
+          value: newsecret
         - name: PGDATABASE
           value: yourdb
 ```
