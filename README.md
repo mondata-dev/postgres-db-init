@@ -9,13 +9,6 @@ Simple docker container that can be used to initialize a postgresql database for
     - name: init-keycloakdb
       image: mondata/db-init
       imagePullPolicy: Always
-      command:
-        - sh
-      args:
-        - -c
-        - |
-          echo "Adding database user..."
-          ./init.sh
       envFrom:
         - configMapRef:
             name: db-configmap
