@@ -46,3 +46,12 @@ data:
   PGHOST:      example.com
   PGPORT:      5432
 ```
+
+## Build & Deploy
+
+```bash
+docker build -t mondata/postgres-db-init:VERSION .
+docker push mondata/postgres-db-init:VERSION
+git tag -a VERSION
+git push --follow-tags
+```
