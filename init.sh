@@ -14,8 +14,4 @@ until psql -U ${PGADMINUSER} -h ${PGHOST} -d postgres -l > /dev/null; do
   sleep 2;
 done
 
-psql -U ${PGADMINUSER} -h ${PGHOST} -d postgres -c "create user \"${PGUSER}\" with encrypted password '${PGUSERPASSWORD}'"
-psql -U ${PGADMINUSER} -h ${PGHOST} -d postgres -c "create database \"${PGDATABASE}\""
-psql -U ${PGADMINUSER} -h ${PGHOST} -d postgres -c "grant all privileges on database \"${PGDATABASE}\" to \"${PGUSER}\""
-
-exit 0
+exec /scripts/${1:-create-db.sh}
