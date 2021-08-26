@@ -6,8 +6,8 @@ Simple docker container that can be used to initialize a postgresql database for
 
 ```yaml
   initContainers:
-    - name: init-keycloakdb
-      image: mondata/db-init
+    - name: init-db
+      image: mondata/postgres-db-init
       imagePullPolicy: Always
       envFrom:
         - configMapRef:
